@@ -500,13 +500,18 @@ body {
   display: none;
 }
 
-.support-modal {
+.support-modal,
+.about-modal {
   position: fixed;
   inset: 0;
   z-index: 9000;
   display: grid;
   place-items: center;
   padding: 22px;
+}
+
+.about-modal[hidden] {
+  display: none;
 }
 
 .support-modal-backdrop {
@@ -669,6 +674,86 @@ body {
   font-size: 14px;
   font-weight: 800;
   cursor: pointer;
+}
+
+.about-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 100%);
+  max-height: min(760px, 88vh);
+  overflow: auto;
+  padding: clamp(26px, 4vw, 44px);
+  border: 1px solid rgba(16, 17, 19, 0.08);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(26, 192, 214, 0.12), transparent 28%),
+    rgba(255, 255, 255, 0.97);
+  box-shadow: 0 30px 80px rgba(16, 17, 19, 0.26);
+}
+
+.about-dialog h2 {
+  max-width: 620px;
+  margin: 0 0 22px;
+  color: var(--ink);
+  font-size: clamp(42px, 6vw, 74px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.about-story {
+  display: grid;
+  max-width: 720px;
+  gap: 14px;
+  margin-bottom: 34px;
+}
+
+.about-story p {
+  margin: 0;
+  color: #5f6873;
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.about-why {
+  padding-top: 26px;
+  border-top: 1px solid rgba(16, 17, 19, 0.08);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.why-card {
+  padding: 18px;
+  border-radius: 16px;
+  background: #f7f9fb;
+}
+
+.why-card span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.why-card h3 {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: 18px;
+  line-height: 1.18;
+}
+
+.why-card p {
+  margin: 0;
+  color: #66707b;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .booth-page {
@@ -2425,6 +2510,15 @@ body {
   .footer-info {
     justify-items: start;
     text-align: left;
+  }
+
+  .about-dialog {
+    padding: 28px 20px;
+    border-radius: 18px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
   }
 }
 

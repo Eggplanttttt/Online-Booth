@@ -171,6 +171,41 @@ function setupSupportModal() {
 
 setupSupportModal();
 
+function setupAboutModal() {
+  var modal = document.getElementById("about-modal");
+  var openButton = document.querySelector("[data-about-open]");
+
+  if (!modal || !openButton) {
+    return;
+  }
+
+  var closeButtons = modal.querySelectorAll("[data-about-close]");
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+  }
+
+  openButton.addEventListener("click", openModal);
+
+  closeButtons.forEach(function (button) {
+    button.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && !modal.hidden) {
+      closeModal();
+    }
+  });
+}
+
+setupAboutModal();
+
 updateClock();
 setInterval(updateClock, 1000);
 
