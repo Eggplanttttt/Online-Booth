@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Booth | Edit Strip</title>
+  <link rel="icon" type="image/svg+xml" href="assets/camera-svgrepo-com.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="booth-page">
+  <main class="edit-shell">
+    <nav class="brand booth-brand" aria-label="Primary">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-icon"><img src="assets/camera-svgrepo-com.svg" alt=""></span>
+        <span>Online Booth</span>
+      </a>
+    </nav>
+
+    <section class="edit-page" aria-labelledby="edit-title">
+      <div class="edit-glow" aria-hidden="true"></div>
+      <div class="edit-heading">
+        <div>
+          <p class="section-kicker">Almost ready</p>
+          <h1 id="edit-title">Edit your strip</h1>
+          <p>Add filters, a background color, stickers, and a caption.</p>
+        </div>
+        <a class="retake-button" href="photobooth.html">← Retake</a>
+      </div>
+
+      <div class="edit-layout">
+        <div class="strip-preview-area">
+          <div class="tablet-preview">
+            <span class="tablet-camera" aria-hidden="true"></span>
+            <div class="preview-frame">
+              <div class="final-strip" id="final-strip"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="editor-dock">
+          <div class="tool-tabs" aria-label="Editing tools">
+            <button class="tool-tab is-active" type="button" data-tool="filter">Filter</button>
+            <button class="tool-tab" type="button" data-tool="background">Background</button>
+            <button class="tool-tab" type="button" data-tool="stickers">Stickers</button>
+            <button class="tool-tab" type="button" data-tool="caption">Caption</button>
+          </div>
+          <button class="save-strip-button" type="button" id="save-strip">Save strip →</button>
+
+          <section class="tool-panel is-active" data-tool-panel="filter">
+            <h2>Filter</h2>
+            <div class="tool-grid">
+              <button class="tool-button is-active" type="button" data-filter="none">
+                <span class="filter-sample sample-none" aria-hidden="true"></span>
+                <span>None</span>
+              </button>
+              <button class="tool-button" type="button" data-filter="bw">
+                <img class="filter-sample" src="assets/filter/b%26w.jpg" alt="">
+                <span>B&amp;W</span>
+              </button>
+              <button class="tool-button" type="button" data-filter="warm">
+                <img class="filter-sample" src="assets/filter/warm.avif" alt="">
+                <span>Warm</span>
+              </button>
+              <button class="tool-button" type="button" data-filter="cool">
+                <img class="filter-sample" src="assets/filter/cool.png" alt="">
+                <span>Cool</span>
+              </button>
+              <button class="tool-button" type="button" data-filter="vintage">
+                <img class="filter-sample" src="assets/filter/vintage.avif" alt="">
+                <span>Vintage</span>
+              </button>
+              <button class="tool-button" type="button" data-filter="fade">
+                <img class="filter-sample" src="assets/filter/fade.png" alt="">
+                <span>Fade</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="tool-panel" data-tool-panel="background" hidden>
+            <div class="panel-heading">
+              <h2>Background</h2>
+              <span id="background-code">#E7E7E7</span>
+            </div>
+            <div class="swatches">
+              <button class="swatch is-active" style="--swatch: #e7e7e7" type="button" data-color="#e7e7e7"></button>
+              <button class="swatch" style="--swatch: #111111" type="button" data-color="#111111"></button>
+              <button class="swatch" style="--swatch: #ef3d3a" type="button" data-color="#ef3d3a"></button>
+              <button class="swatch" style="--swatch: #f59e0b" type="button" data-color="#f59e0b"></button>
+              <button class="swatch" style="--swatch: #3b82f6" type="button" data-color="#3b82f6"></button>
+              <button class="swatch" style="--swatch: #7c5cf6" type="button" data-color="#7c5cf6"></button>
+            </div>
+            <label class="custom-color">
+              <input type="color" id="custom-color" value="#e7e7e7">
+              <span>Custom color...</span>
+            </label>
+          </section>
+
+          <section class="tool-panel" data-tool-panel="stickers" hidden>
+            <h2>Stickers</h2>
+            <div class="sticker-panel-layout">
+              <div class="sticker-grid">
+                <button type="button" data-sticker="🌟">🌟</button>
+                <button type="button" data-sticker="💖">💖</button>
+                <button type="button" data-sticker="🎉">🎉</button>
+                <button type="button" data-sticker="✨">✨</button>
+                <button type="button" data-sticker="🌈">🌈</button>
+                <button type="button" data-sticker="🔥">🔥</button>
+                <button type="button" data-sticker="🌸">🌸</button>
+                <button type="button" data-sticker="😎">😎</button>
+                <button type="button" data-sticker="🎀">🎀</button>
+                <button type="button" data-sticker="🦋">🦋</button>
+                <button type="button" data-sticker="💫">💫</button>
+                <button type="button" data-sticker="⭐">⭐</button>
+                <button type="button" data-sticker="💅">💅</button>
+                <button type="button" data-sticker="👑">👑</button>
+                <button type="button" data-sticker="💎">💎</button>
+                <button type="button" data-sticker="🫶">🫶</button>
+                <button type="button" data-sticker="😂">😂</button>
+                <button type="button" data-sticker="🥳">🥳</button>
+                <button type="button" data-sticker="💯">💯</button>
+                <button type="button" data-sticker="📸">📸</button>
+                <button type="button" data-sticker="🧡">🧡</button>
+                <button type="button" data-sticker="💜">💜</button>
+                <button type="button" data-sticker="💙">💙</button>
+                <button type="button" data-sticker="🤍">🤍</button>
+                <button type="button" data-sticker="🖤">🖤</button>
+                <button type="button" data-sticker="🌙">🌙</button>
+                <button type="button" data-sticker="☁️">☁️</button>
+                <button type="button" data-sticker="🍒">🍒</button>
+                <button type="button" data-sticker="🍓">🍓</button>
+                <button type="button" data-sticker="⚡">⚡</button>
+              </div>
+              <div class="sticker-controls">
+                <label class="sticker-size-control">
+                  <span>Sticker height</span>
+                  <input type="range" id="sticker-size" min="20" max="84" value="38">
+                </label>
+                <label class="sticker-size-control">
+                  <span>Sticker rotation</span>
+                  <input type="range" id="sticker-rotation" min="-180" max="180" value="0">
+                </label>
+                <div class="sticker-actions">
+                  <button class="sticker-action" type="button" id="remove-sticker">Remove selected</button>
+                  <button class="sticker-action danger" type="button" id="clear-stickers">Clear all</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tool-panel" data-tool-panel="caption" hidden>
+            <h2>Caption</h2>
+            <div class="caption-standard">
+              <div class="caption-position" aria-label="Caption position">
+                <button class="caption-position-button" type="button" data-caption-position="top">Top</button>
+                <button class="caption-position-button is-active" type="button" data-caption-position="bottom">Bottom</button>
+              </div>
+              <textarea class="caption-input" maxlength="20" placeholder="Add a caption..."></textarea>
+              <p class="caption-count">0/20</p>
+            </div>
+            <div class="caption-single" hidden>
+              <label class="caption-field">
+                <span>Top caption</span>
+                <input class="caption-input-top" maxlength="20" type="text" placeholder="Top text">
+                <small class="caption-count-top">0/20</small>
+              </label>
+              <label class="caption-field">
+                <span>Bottom caption</span>
+                <input class="caption-input-bottom" maxlength="20" type="text" placeholder="Bottom text">
+                <small class="caption-count-bottom">0/20</small>
+              </label>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

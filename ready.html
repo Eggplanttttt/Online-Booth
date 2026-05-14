@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Booth | Strip Ready</title>
+  <link rel="icon" type="image/svg+xml" href="assets/camera-svgrepo-com.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="booth-page">
+  <main class="ready-shell">
+    <nav class="brand booth-brand" aria-label="Primary">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-icon"><img src="assets/camera-svgrepo-com.svg" alt=""></span>
+        <span>Online Booth</span>
+      </a>
+    </nav>
+
+    <section class="ready-page" aria-labelledby="ready-title">
+      <div class="ready-heading">
+        <div>
+          <h1 id="ready-title">Your strip is ready.</h1>
+          <p>Download or retake to try again.</p>
+        </div>
+      </div>
+
+      <div class="ready-preview-card">
+        <div class="final-strip ready-strip" id="ready-strip"></div>
+      </div>
+
+      <div class="ready-actions">
+        <button class="download-button" type="button" id="download-strip">Download PNG</button>
+        <a class="edit-again-button" href="edit.html?restore=final">Edit again</a>
+        <a class="home-button" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Booth | Photobooth</title>
+  <link rel="icon" type="image/svg+xml" href="assets/camera-svgrepo-com.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="booth-page">
+  <main class="booth-shell">
+    <nav class="brand booth-brand" aria-label="Primary">
+      <a class="brand-mark" href="index.html">
+        <span class="brand-icon"><img src="assets/camera-svgrepo-com.svg" alt=""></span>
+        <span>Online Booth</span>
+      </a>
+    </nav>
+
+    <div class="virtual-computer" id="setup-frame">
+      <div class="virtual-screen">
+        <div class="screen-bar" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="screen-content">
+          <section class="booth-setup" id="booth-setup" aria-labelledby="booth-title">
+            <h1 id="booth-title">Set up your booth</h1>
+            <p class="booth-lead">Choose your camera, layout, and timer then snap away.</p>
+
+            <div class="setup-grid">
+              <section class="setup-step setup-camera" aria-labelledby="camera-title">
+                <div class="step-label">
+                  <span>1</span>
+                  <h2 id="camera-title">Camera</h2>
+                </div>
+                <div class="camera-panel">
+                  <div class="camera-status">
+                    <span class="camera-icon" aria-hidden="true"></span>
+                    <div>
+                      <h3 id="camera-status-title">No camera connected</h3>
+                      <p id="camera-status-text">Click to allow camera access</p>
+                    </div>
+                  </div>
+                  <span class="ready-status" id="ready-status" hidden>Ready</span>
+                  <button class="booth-button" type="button" id="allow-camera">Allow access</button>
+                </div>
+              </section>
+
+              <section class="setup-step" aria-labelledby="layout-title">
+                <div class="step-label">
+                  <span>2</span>
+                  <h2 id="layout-title">Layout</h2>
+              </div>
+              <div class="layout-options" aria-label="Choose layout">
+                <button class="layout-option" type="button" data-layout="1x1">
+                  <span class="layout-bars one" aria-hidden="true"><span></span></span>
+                  <span>1x1</span>
+                </button>
+                <button class="layout-option" type="button" data-layout="1x2">
+                  <span class="layout-bars two" aria-hidden="true"><span></span><span></span></span>
+                  <span>1x2</span>
+                  </button>
+                  <button class="layout-option" type="button" data-layout="2x2">
+                    <span class="layout-bars four" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                    <span>2x2</span>
+                  </button>
+                  <button class="layout-option is-active" type="button" data-layout="1x3">
+                    <span class="layout-bars three" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span>1x3</span>
+                  </button>
+                  <button class="layout-option" type="button" data-layout="2x3">
+                    <span class="layout-bars six" aria-hidden="true">
+                      <span></span><span></span>
+                      <span></span><span></span>
+                      <span></span><span></span>
+                    </span>
+                    <span>2x3</span>
+                  </button>
+                </div>
+                <p class="layout-note" id="layout-note">3 photos will be taken - 1x3 grid</p>
+              </section>
+
+              <section class="setup-step" aria-labelledby="timer-title">
+                <div class="step-label">
+                  <span>3</span>
+                  <h2 id="timer-title">Countdown Timer</h2>
+                </div>
+                <div class="timer-options" aria-label="Choose countdown timer">
+                  <button class="timer-option is-active" type="button"><img src="assets/clock.png" alt="">3s</button>
+                  <button class="timer-option" type="button"><img src="assets/clock.png" alt="">5s</button>
+                  <button class="timer-option" type="button"><img src="assets/clock.png" alt="">10s</button>
+                </div>
+              </section>
+
+              <div class="setup-start">
+                <button class="start-booth-button" type="button" id="start-booth" disabled>Allow camera first</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="computer-stand" aria-hidden="true"></div>
+    </div>
+
+    <section class="booth-capture" id="booth-capture" aria-labelledby="capture-title" hidden>
+      <div class="capture-top">
+        <div>
+          <h1 id="capture-title">Hit snap to start!</h1>
+          <p id="capture-meta">Layout: 1x3 - Timer: 3s</p>
+        </div>
+        <div class="capture-controls">
+          <span class="capture-dot is-active" aria-hidden="true"></span>
+          <span class="capture-dot" aria-hidden="true"></span>
+          <button class="cancel-button" type="button" id="cancel-capture">Cancel</button>
+        </div>
+      </div>
+
+      <div class="capture-workspace">
+        <div class="capture-stage">
+          <video class="capture-preview is-mirrored" id="capture-preview" autoplay muted playsinline></video>
+          <span class="capture-count" id="capture-count">0/3</span>
+          <span class="countdown-overlay" id="countdown-overlay" hidden>3</span>
+          <button class="mirror-button" type="button" id="mirror-camera">
+            <img src="assets/mirror.svg" alt="">
+            <span>Mirror</span>
+          </button>
+        </div>
+
+        <div class="capture-strip">
+          <div class="shot-slots" id="shot-slots"></div>
+        </div>
+      </div>
+
+      <div class="capture-bottom">
+        <button class="snap-button" type="button" id="snap-button">
+          <img src="assets/camera-svgrepo-com.svg" alt="">
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

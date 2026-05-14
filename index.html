@@ -4,31 +4,252 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Online Booth</title>
+  <link rel="icon" type="image/svg+xml" href="assets/camera-svgrepo-com.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="scroll-reveal-enabled">
+  <div class="curtain-loader" aria-hidden="true">
+    <span class="curtain-panel curtain-panel-left"></span>
+    <span class="curtain-panel curtain-panel-right"></span>
+  </div>
+
   <main class="hero">
     <nav class="brand" aria-label="Primary">
-      <a class="brand-mark" href="#">
+      <a class="brand-mark" href="index.html">
         <span class="brand-icon"><img src="assets/camera-svgrepo-com.svg" alt=""></span>
         <span>Online Booth</span>
       </a>
     </nav>
 
     <section class="hero-grid" aria-labelledby="hero-title">
-      <div class="pc-scene">
-        <img class="pc-image" src="assets/online-booth-pc.png" alt="Online Booth photobooth preview displayed on a desktop computer">
+      <div class="preview-panel">
+        <div class="device-view-indicator" aria-label="Current preview mode">
+          <span class="device-view-icon desktop-view-icon" aria-label="Desktop view">
+            <img src="assets/desktop.png" alt="">
+          </span>
+          <span class="device-view-icon phone-view-icon" aria-label="Mobile view">
+            <img src="assets/phone.png" alt="">
+          </span>
+        </div>
+
+        <div class="device-preview-scene">
+          <img class="desktop-preview-image" src="assets/online-booth-pc.png" alt="Online Booth strip ready preview displayed on a desktop computer">
+          <img class="phone-preview-image" src="assets/online-booth-phone-preview.png" alt="Online Booth strip ready preview on a mobile phone">
+        </div>
       </div>
 
       <div class="hero-copy">
         <h1 id="hero-title">Your online photobooth everywhere</h1>
         <p>Capture fun moments instantly with Online Booth.</p>
-        <a class="cta" href="#">Get Started</a>
+        <a class="cta" href="photobooth.html">Get Started</a>
+      </div>
+    </section>
+
+    <section class="features" aria-labelledby="features-title">
+      <div class="features-heading">
+        <p>#Providing Best Services</p>
+        <h2 id="features-title">Our Key Features</h2>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/grid.gif" alt="">
+          </span>
+          <div>
+            <h3>Multiple Layouts</h3>
+            <p>Choose 1x2, 1x3, and 2x2 photo strips that fit your booth moment.</p>
+          </div>
+        </article>
+
+        <article class="feature-card is-featured">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/fun_filters.gif" alt="">
+          </span>
+          <div>
+            <h3>Fun Filters</h3>
+            <p>Apply black and white, warm, cool, vintage, and fade filters in one tap.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/timer.gif" alt="">
+          </span>
+          <div>
+            <h3>Countdown Timer</h3>
+            <p>Set 3, 5, or 10 seconds so everyone is ready before the shot.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/caption.gif" alt="">
+          </span>
+          <div>
+            <h3>Stickers &amp; Captions</h3>
+            <p>Drag emoji stickers anywhere and add captions to each strip.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/background.gif" alt="">
+          </span>
+          <div>
+            <h3>Custom Background</h3>
+            <p>Pick from color presets or choose your own strip border color.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/mirror.gif" alt="">
+          </span>
+          <div>
+            <h3>Mirror Mode</h3>
+            <p>Flip between mirrored and normal camera views while posing.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/privacy.gif" alt="">
+          </span>
+          <div>
+            <h3>Privacy First</h3>
+            <p>Your photos stay on your device and nothing is uploaded.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/download.gif" alt="">
+          </span>
+          <div>
+            <h3>Instant Download</h3>
+            <p>Save your final strip as a PNG, ready to share right away.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/live.gif" alt="">
+          </span>
+          <div>
+            <h3>Live Preview</h3>
+            <p>See edits update instantly before saving the finished strip.</p>
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <span class="feature-icon feature-gif" aria-hidden="true">
+            <img src="assets/features/capture.gif" alt="">
+          </span>
+          <div>
+            <h3>Auto-Capture</h3>
+            <p>Shoots every frame automatically, with no repeated clicking needed.</p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
+
+  <section class="closing">
+    <div class="footer-bg" aria-hidden="true">Selfie</div>
+    <footer class="site-footer">
+      <a class="footer-brand" href="index.html">
+        <span>Online Booth</span>
+        <img src="assets/camera-svgrepo-com.svg" alt="">
+      </a>
+      <div class="footer-info">
+        <p>&copy; 2026 Online Booth</p>
+        <a href="#">About</a>
+        <button class="footer-link-button" type="button" data-support-open>Support</button>
+        <a href="photobooth.html">Open App</a>
+        <p>Developed by: Ezekiel R. Cadiz - 2026</p>
+      </div>
+    </footer>
+  </section>
+
+  <div class="support-modal" id="support-modal" hidden>
+    <div class="support-modal-backdrop" data-support-close></div>
+    <section class="support-dialog" role="dialog" aria-modal="true" aria-labelledby="support-title">
+      <button class="support-close" type="button" aria-label="Close support" data-support-close>&times;</button>
+      <p class="section-kicker">Need help?</p>
+      <h2 id="support-title">Support</h2>
+      <div class="support-tabs" aria-label="Support options">
+        <button class="support-tab is-active" type="button" data-support-tab="faq">FAQ</button>
+        <button class="support-tab" type="button" data-support-tab="comment">Comment</button>
+      </div>
+
+      <div class="support-panel is-active" data-support-panel="faq">
+        <article class="faq-item">
+          <h3>Do I need to create an account?</h3>
+          <p>No. Online Booth works instantly in your browser with no sign-up, no login, and no account required.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Are my photos saved or uploaded anywhere?</h3>
+          <p>No. Your photos are processed on your device. Nothing is uploaded to a server, and refreshing or closing the tab clears the session.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Which browsers are supported?</h3>
+          <p>Online Booth works in modern browsers that support camera access, including Chrome, Edge, Firefox, and Safari. It works best on desktop or laptop screens.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Why is my camera not showing up?</h3>
+          <p>Your browser needs camera permission. Click the camera icon in the address bar, choose Allow, then reload. Also close apps that may already be using the camera.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Can I use Online Booth on mobile?</h3>
+          <p>Yes, it works on modern mobile browsers, but the editing experience is smoother on a wider desktop or laptop screen.</p>
+        </article>
+        <article class="faq-item">
+          <h3>How do I download my photo strip?</h3>
+          <p>After your shots are taken and edited, open the result screen and click Download PNG to save the final strip to your device.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Can I change the layout mid-session?</h3>
+          <p>Not while capturing. Choose your layout and timer before starting. To change them, retake the session and pick a new setup.</p>
+        </article>
+        <article class="faq-item">
+          <h3>Is Online Booth free?</h3>
+          <p>Yes. Online Booth is free to use, with no watermarks, hidden tiers, or paid downloads.</p>
+        </article>
+      </div>
+
+      <form class="support-panel support-comment-form" data-support-panel="comment" hidden>
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com">
+        </label>
+        <label>
+          <span>Subject</span>
+          <select name="subject">
+            <option value="">Select a topic...</option>
+            <option value="camera">Camera not working</option>
+            <option value="download">Download issue</option>
+            <option value="layout">Layout / strip question</option>
+            <option value="bug">Found a bug</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+        <label>
+          <span>Comment</span>
+          <textarea name="comment" rows="4" placeholder="Tell us what happened..."></textarea>
+        </label>
+        <p class="support-form-status" aria-live="polite"></p>
+        <button class="support-submit" type="submit">Send comment</button>
+      </form>
+    </section>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
